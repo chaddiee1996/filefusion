@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JPG Converter - Convert PDF Pages to Images Free</title>
+    <meta name="description" content="Convert PDF pages to JPG images online. Free PDF to image converter.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📄 FileFusion</h1>
+            </div>
+            <nav>
+    <a href="index.html">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="blog.html">Blog</a>
+    <a href="#about">About</a>
+</nav>
+        </div>
+    </header>
+
+    <!-- Tool Page Content -->
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-container">
+                <h1>🖼️ PDF to JPG</h1>
+                <p class="description">Convert PDF pages to JPG images</p>
+
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p>Drag and drop your PDF file here</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">or</p>
+                    <label for="fileInput" class="file-select-btn">Select PDF File</label>
+                    <input type="file" id="fileInput" accept=".pdf">
+                </div>
+
+                <!-- File Info -->
+                <div id="fileInfo" class="file-list" style="display: none;"></div>
+
+                <!-- Conversion Options -->
+                <div id="conversionOptions" style="display: none; margin: 2rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Conversion Options:</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #555;">
+                            Image Quality:
+                        </label>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="quality" value="1.0">
+                                <span>Low (Smaller file)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="quality" value="1.5" checked>
+                                <span>Medium (Balanced)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="quality" value="2.0">
+                                <span>High (Best quality)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #555;">
+                            Convert:
+                        </label>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="convertPages" value="all" checked>
+                                <span>All Pages</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="convertPages" value="first">
+                                <span>First Page Only</span>
+                            </label>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 0.5rem;">
+                            Total pages: <strong id="totalPages">0</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Process Button -->
+                <button id="convertBtn" class="process-btn" disabled>Convert to JPG</button>
+
+                <!-- Status Message -->
+                <div id="status" style="display: none;"></div>
+
+                <!-- Instructions -->
+                <div style="margin-top: 3rem; padding: 2rem; background-color: #f8f9fa; border-radius: 8px;">
+                    <h3 style="margin-bottom: 1rem;">How to Convert PDF to JPG:</h3>
+                    <ol style="padding-left: 1.5rem; color: #555;">
+                        <li style="margin-bottom: 0.5rem;">Select or drag your PDF file</li>
+                        <li style="margin-bottom: 0.5rem;">Choose image quality and pages to convert</li>
+                        <li style="margin-bottom: 0.5rem;">Click "Convert to JPG" button</li>
+                        <li>Download your JPG images (each page = 1 image)</li>
+                    </ol>
+                    <p style="margin-top: 1rem; color: #7f8c8d; font-size: 0.95rem;">
+                        💡 <strong>Note:</strong> Each page of your PDF will be converted to a separate JPG image file.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FileFusion. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <!-- Load our convert script -->
+    <script>
+        // Set PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="js/pdf-to-jpg.js"></script>
+
+</body>
+</html>

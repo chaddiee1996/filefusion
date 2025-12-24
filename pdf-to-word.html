@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Word Converter - Convert PDF to DOCX Free</title>
+    <meta name="description" content="Convert PDF to Word document online. Free PDF to DOCX converter with text extraction.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📄 FileFusion</h1>
+            </div>
+            <nav>
+    <a href="index.html">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="blog.html">Blog</a>
+    <a href="#about">About</a>
+</nav>
+        </div>
+    </header>
+
+    <!-- Tool Page Content -->
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-container">
+                <h1>📝 PDF to Word Converter</h1>
+                <p class="description">Convert your PDF files to editable Word documents</p>
+
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p>Drag and drop your PDF file here</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">or</p>
+                    <label for="fileInput" class="file-select-btn">Select PDF File</label>
+                    <input type="file" id="fileInput" accept=".pdf">
+                </div>
+
+                <!-- File Info -->
+                <div id="fileInfo" class="file-list" style="display: none;"></div>
+
+                <!-- Process Button -->
+                <button id="convertBtn" class="process-btn" disabled>Convert to Word</button>
+
+                <!-- Status Message -->
+                <div id="status" style="display: none;"></div>
+
+                <!-- Instructions -->
+                <div style="margin-top: 3rem; padding: 2rem; background-color: #f8f9fa; border-radius: 8px;">
+                    <h3 style="margin-bottom: 1rem;">How to Convert PDF to Word:</h3>
+                    <ol style="padding-left: 1.5rem; color: #555;">
+                        <li style="margin-bottom: 0.5rem;">Select or drag your PDF file</li>
+                        <li style="margin-bottom: 0.5rem;">Click "Convert to Word" button</li>
+                        <li style="margin-bottom: 0.5rem;">Wait for the conversion to complete</li>
+                        <li>Download your Word document (.docx)</li>
+                    </ol>
+                    <p style="margin-top: 1rem; color: #7f8c8d; font-size: 0.95rem;">
+                        💡 <strong>Note:</strong> This tool extracts text from your PDF and creates an editable Word document. 
+                        Complex formatting may need manual adjustment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FileFusion. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@7.8.2/build/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <!-- Load our convert script -->
+    <script>
+        // Set PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="js/pdf-to-word.js"></script>
+
+</body>
+</html>

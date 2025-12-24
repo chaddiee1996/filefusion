@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate PDF Online - Fix PDF Page Orientation Free</title>
+    <meta name="description" content="Rotate PDF pages online. Fix upside down or sideways PDF pages for free.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📄 FileFusion</h1>
+            </div>
+            <nav>
+    <a href="index.html">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="blog.html">Blog</a>
+    <a href="#about">About</a>
+</nav>
+        </div>
+    </header>
+
+    <!-- Tool Page Content -->
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-container">
+                <h1>🔄 Rotate PDF</h1>
+                <p class="description">Rotate PDF pages to fix orientation</p>
+
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p>Drag and drop your PDF file here</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">or</p>
+                    <label for="fileInput" class="file-select-btn">Select PDF File</label>
+                    <input type="file" id="fileInput" accept=".pdf">
+                </div>
+
+                <!-- File Info -->
+                <div id="fileInfo" class="file-list" style="display: none;"></div>
+
+                <!-- Rotation Options -->
+                <div id="rotationOptions" style="display: none; margin: 2rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Rotation Options:</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #555;">
+                            Select Rotation:
+                        </label>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="rotation" value="90" checked>
+                                <span>↻ 90° Clockwise</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="rotation" value="180">
+                                <span>↻ 180°</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="rotation" value="270">
+                                <span>↺ 90° Counter-Clockwise</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #555;">
+                            Apply to:
+                        </label>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="applyTo" value="all" checked>
+                                <span>All Pages</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="applyTo" value="specific">
+                                <span>Specific Pages</span>
+                            </label>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="specificPages" 
+                            placeholder="e.g., 1,3,5-8" 
+                            disabled
+                            style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; margin-top: 0.5rem;"
+                        >
+                        <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 0.5rem;">
+                            Total pages: <strong id="totalPages">0</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Process Button -->
+                <button id="rotateBtn" class="process-btn" disabled>Rotate PDF</button>
+
+                <!-- Status Message -->
+                <div id="status" style="display: none;"></div>
+
+                <!-- Instructions -->
+                <div style="margin-top: 3rem; padding: 2rem; background-color: #f8f9fa; border-radius: 8px;">
+                    <h3 style="margin-bottom: 1rem;">How to Rotate a PDF:</h3>
+                    <ol style="padding-left: 1.5rem; color: #555;">
+                        <li style="margin-bottom: 0.5rem;">Select or drag your PDF file</li>
+                        <li style="margin-bottom: 0.5rem;">Choose rotation angle (90°, 180°, or 270°)</li>
+                        <li style="margin-bottom: 0.5rem;">Select which pages to rotate (all or specific)</li>
+                        <li style="margin-bottom: 0.5rem;">Click "Rotate PDF" button</li>
+                        <li>Download your rotated PDF file</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FileFusion. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    
+    <!-- Load our rotate script -->
+    <script src="js/rotate.js"></script>
+
+</body>
+</html>
